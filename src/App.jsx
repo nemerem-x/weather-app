@@ -3,7 +3,6 @@ import Nav from '../Components/Nav'
 import Main from '../Components/Main'
 import Days from '../Components/Days'
 import './App.css'
-import SunCloud from '/sun-cloud-small.png'
 import AddButton from '/addbtn.png'
 import Logo from '/logo.png'
 
