@@ -1,5 +1,5 @@
 import '../src/App.css'
-import Logo from '/logo.png'
+import Logo from '/weatherapplogo.png'
 import DarkMode from '/darkmode.png'
 
 function Nav({handleOnChange, handleOnSubmit, coordinates}) {

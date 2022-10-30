@@ -4,7 +4,7 @@ import Main from '../Components/Main'
 import Days from '../Components/Days'
 import './App.css'
 import AddButton from '/addbtn.png'
-import Logo from '/logo.png'
+import Logo from '/weatherapplogo.png'
 
 function App() {
 
