@@ -55,12 +55,6 @@ function App() {
             <h3>21<span>&deg;</span></h3>
             <img src={SunCloud} alt="weather" />
             <h3>New York</h3>
-          </div>
-
-          <div className="city">
-            <h3>21<span>&deg;</span></h3>
-            <img src={SunCloud} alt="weather" />
-            <h3>New York</h3>
           </div> */}
 
           <div className='addButton'><img src={AddButton} alt="add" /></div>
