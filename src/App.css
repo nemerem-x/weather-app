@@ -6,8 +6,6 @@ body {
   background-color: #f6f6f6;
   margin: 0;
   font-family: 'Inter', sans-serif;
-  height: 100vh;
-  overflow: hidden;
 }
 
 h1 {
@@ -285,6 +283,10 @@ button {
 }
 
 @media screen and (max-width: 768px){
+  .app{
+    padding: 0 3em;
+  }
+
   .logoMobile {
     display: block;
     width: 100%;
@@ -320,5 +322,9 @@ button {
 
   .maindata {
     margin-top: 1em;
+  }
+
+  .container {
+    padding: 0 2em;
   }
 }
