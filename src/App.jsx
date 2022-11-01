@@ -9,8 +9,25 @@ import Logo from '/weatherapplogo.png'
 function App() {
 
   const [coordinates, setCoordinates] = useState(null)
-  const [searchquery, setSearchquery] = useState(null)
+  const [searchquery, setSearchquery] = useState(undefined)
+  const [searchResult, setSearchResult] = useState([])
   const [city, setCity] = useState("")
+
+  useEffect(() => {
+    const city = async () => {
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': '84cb2be0d9msh250ec78d40daaf3p148eb0jsn39f8064681a6',
+          'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+        }
+      }
+      const res = await fetch(`https://wft-geo-db.p.rapidapi.com/v1/geo/cities?minPopulation=1000000&namePrefix=${searchquery}`, options)
+      const data = await res.json()
+      setSearchResult(data.data)
+    }
+    city()
+  },[searchquery])
 
   useEffect(() => {
     async function fetchData() {
@@ -27,20 +44,36 @@ function App() {
     }
   },[city])
 
-  const input = (e) => {
-    setSearchquery(e.target.value)
+  function debounce(func, timeout = 1000){
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { func(...args) }, timeout);
+    };
   }
+  const input = debounce((e)=> 
+      setSearchquery(e.target.value ? e.target.value : undefined)
+  )
 
-  const submit = (e) => {
+  const submit = (e, selected) => {
     e.preventDefault()
-    setCity(searchquery)
+    if(selected){
+      setSearchquery(selected)
+    }
+    setCity(selected || searchquery)
+    setSearchResult([])
   }
 
   return (
     <>
       <div className="app">
 
-        <Nav coordinates={coordinates} handleOnChange={input} handleOnSubmit={submit}/>
+        <Nav 
+          searchResult={searchResult}
+          coordinates={coordinates}
+          handleOnChange={input}
+          handleOnSubmit={submit}
+        />
 
         <Main coordinates={coordinates} />
 

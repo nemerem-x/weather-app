@@ -33,6 +33,29 @@ h3 {
   line-height: 100%;
 }
 
+h4 {
+  cursor: pointer;
+  margin: 0;
+  color: #8c8c8c;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 100%;
+  padding-bottom: 0.6em;
+  padding-left: 0.8em;
+  padding-top: 0.6em;
+  border-bottom: 1px solid #dadada ;
+}
+
+h4:hover{
+  background-color: #e9e9e9;
+  border-radius: 10px;
+}
+
+h4:nth-last-child(1){
+  border-bottom: none ;
+  margin: 0;
+}
+
 p {
   color: #C0C0C0;
   font-size: 1rem;
@@ -46,6 +69,7 @@ p {
 .nav {
   width: 100%;
   padding: 1em 0;
+  position: relative;
 }
 
 .navbar {
@@ -62,7 +86,6 @@ form {
   height: 2.5em;
   display: flex;
   align-items: center;
-  margin-left: 3em;
 }
 
 .navbar input{
@@ -78,7 +101,7 @@ form {
 
 form button {
   cursor: pointer;
-  right: 5px;
+  right: 5.5px;
   position: absolute;
   height: 2.3em;
   width: 5em;
@@ -108,6 +131,24 @@ form button {
   cursor: pointer;
 }
 
+.searchResults.active {
+  display: block;
+  position: absolute;
+  height: auto;
+  padding: 0.8em;
+  width: 20em;
+  background-color: #fff;
+  z-index: 1;
+  border-radius: 20px;
+  left: 49%;
+  transform: translateX(-50%);
+  box-shadow: 0px 21px 31px 12px rgba(0, 0, 0, 0.05);
+}
+
+.searchResults {
+  display: none;
+}
+
 .maindata {
   position: relative;
   display: flex;
@@ -124,6 +165,9 @@ form button {
 }
 
 .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 50em;
   height: 9em;
   border-radius: 40px;
@@ -155,10 +199,6 @@ form button {
   align-items: center;
   justify-content: space-between;
 }
-
-/* .data1 {
-  position: absolute;
-} */
 
 #weathericon {
   max-width: 15%;
@@ -332,5 +372,15 @@ button {
 
   .container {
     padding: 0 2em;
+  }
+
+  .searchResults {
+    display: none;
+  }
+
+  .searchResults.active {
+    left: 45%;
+    transform: translateX(-50%);
+    display: block;
   }
 }
