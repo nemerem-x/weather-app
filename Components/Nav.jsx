@@ -20,6 +20,7 @@ function Nav({handleOnChange, handleOnSubmit, coordinates, searchResult}) {
       <h4 
         onTouchEnd={(e)=>handleOnSubmit(e, selected)}
         onMouseUp={(e)=>handleOnSubmit(e, selected)}
+        onTouchStart={select}
         onMouseDown={select}
         key={result.id}>{result.city}, {result.countryCode}
       </h4>
