@@ -22,9 +22,13 @@ function App() {
           'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
         }
       }
-      const res = await fetch(`https://wft-geo-db.p.rapidapi.com/v1/geo/cities?minPopulation=1000000&namePrefix=${searchquery}`, options)
-      const data = await res.json()
-      setSearchResult(data.data)
+      try {
+        const res = await fetch(`https://wft-geo-db.p.rapidapi.com/v1/geo/cities?minPopulation=1000000&namePrefix=${searchquery}`, options)
+        const data = await res.json()
+        setSearchResult(data.data)
+      } catch(error) {
+        console.log(error)
+      }
     }
     city()
   },[searchquery])
@@ -36,7 +40,7 @@ function App() {
         const data = await res.json()
         setCoordinates(data.coord)
       } catch(error){
-        setCoordinates(null)
+        console.log(error)
       }
     }
     if(searchquery){
@@ -69,7 +73,7 @@ function App() {
       <div className="app">
 
         <Nav 
-          searchResult={searchResult}
+          searchResult={searchResult ? searchResult : []}
           coordinates={coordinates}
           handleOnChange={input}
           handleOnSubmit={submit}

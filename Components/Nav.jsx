@@ -13,15 +13,13 @@ function Nav({handleOnChange, handleOnSubmit, coordinates, searchResult}) {
     inputField.current.value = ""
   }
 
+  // console.log(searchResult)
+
   const searchresults = searchResult.map(result => {
     return (
       <h4 
-        onTouchEnd={(e)=>setTimeout(() => {
-          handleOnSubmit(e, selected)
-        }, 1000) }
-        onMouseUp={(e)=>setTimeout(() => {
-          handleOnSubmit(e, selected)
-        }, 1000) }
+        onTouchEnd={(e)=>handleOnSubmit(e, selected)}
+        onMouseUp={(e)=>handleOnSubmit(e, selected)}
         onMouseDown={select}
         key={result.id}>{result.city}, {result.countryCode}
       </h4>
