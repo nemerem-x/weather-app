@@ -5,6 +5,7 @@ import Days from '../Components/Days'
 import './App.css'
 import AddButton from '/addbtn.png'
 import Logo from '/weatherapplogo.png'
+import Logo_light from '/weatherapplogolight.png'
 import appTheme from './recoil/themeAtom'
 import { useRecoilValue } from 'recoil'
 
@@ -100,7 +101,7 @@ function App() {
       </div> 
 
       <div className="footer">
-        <img src={Logo} alt="logo" /> <p>Built with React</p>
+        <img src={theme ? Logo_light : Logo} alt="logo" /> <p>Built with React</p>
       </div>
     </>
   )

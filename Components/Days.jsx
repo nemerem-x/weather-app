@@ -4,10 +4,14 @@ import WeatherIconRainSmall from '/rain-small.png'
 import WeatherIconCloudSmall from '/cloud-small.png'
 import WeatherIconSnowSmall from '/snow-small.png'
 import WeatherIconThunderStormSmall from '/thunderstorm-small.png'
+import appTheme from '../src/recoil/themeAtom'
+import { useRecoilValue } from 'recoil'
 import Loading from './Loading'
 import '../src/App.css'
 
 function Days({coordinates}) {
+
+  const theme = useRecoilValue(appTheme)
 
   const [currentWeather, setCurrentWeather] = useState(null)
   const [latitude, setLatitude] = useState(null)
@@ -20,15 +24,6 @@ function Days({coordinates}) {
         setLongitude(lon)
     }
   },[coordinates])
-
-  // useEffect(()=>{
-  //   navigator.geolocation.getCurrentPosition((position) => {
-  //     setTimeout(() => {
-  //       setLatitude(position.coords.latitude)
-  //       setLongitude(position.coords.longitude)
-  //     }, 1000);
-  //   })
-  // },[])
   
   useEffect(() => {
     async function fetchData() {
@@ -89,7 +84,7 @@ function Days({coordinates}) {
     <>
       { currentWeather
         ?
-        <div className="seconddata">
+        <div className={`seconddata ${theme ? "dark" : ''}`}>
 
           {fourDaysWeather()}
 

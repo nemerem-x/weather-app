@@ -69,6 +69,11 @@ h4:last-child{
   margin: 0;
 }
 
+h4:first-child{
+  border-radius: 20px 20px 0 0 ;
+  margin: 0;
+}
+
 p {
   color: var(--secondaryFontColor);
   font-size: 1rem;
@@ -227,6 +232,19 @@ form button {
   animation: load 2s infinite;
 }
 
+.loading.dark {
+  background: linear-gradient(
+    120deg,
+    var(--backgroundColor) 10%,
+    #5C6678 38%,
+    #5C6678 10%,
+    var(--backgroundColor) 48%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 2s infinite;
+}
+
 @keyframes load{
   100%{
       background-position: -100% 0;
@@ -327,6 +345,10 @@ form button {
   color: var(--white);
 }
 
+.dark h3 {
+  color: var(--white);
+}
+
 .container {
   width: 50em;
   margin: auto;
@@ -371,6 +393,7 @@ button {
   gap: 10px;
   align-items: center;
   justify-content: center;
+  margin-bottom: 3em;
 }
 
 .footer img {
@@ -380,6 +403,10 @@ button {
 
 .logoMobile {
   display: none;
+}
+
+.mode {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px){
@@ -417,7 +444,7 @@ button {
   }
 
   .mode {
-    width: 1em;
+    width: fit-content;
   }
 
   .maindata {
