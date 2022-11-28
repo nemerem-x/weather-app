@@ -6,8 +6,12 @@ import WeatherIconSnow from '/snow.png'
 import WeatherIconThunderStorm from '/thunderstorm.png'
 import { useState, useEffect } from 'react'
 import Loading from '../Components/Loading'
+import appTheme from '../src/recoil/themeAtom'
+import { useRecoilValue } from 'recoil'
 
 function Main({coordinates}) {
+
+  const theme = useRecoilValue(appTheme)
 
   const [currentWeather, setCurrentWeather] = useState(null)
   const [weatherIcon, setweatherIcon] = useState(null)
@@ -37,15 +41,15 @@ function Main({coordinates}) {
         setCurrentWeather(data)
         
         if (data.weather[0].main.toLowerCase() == "rain"){
-          setweatherIcon( {icon: WeatherIconRain, style: "linear-gradient(270deg, rgba(106, 16, 252, 0.27) -16.97%, rgba(0, 0, 0, 0) 59.8%), #FFFFFF"})
+          setweatherIcon( {icon: WeatherIconRain, style: "rain"})
         } else if (data.weather[0].main.toLowerCase() == "clouds"){
-          setweatherIcon( {icon: WeatherIconCloud, style: "linear-gradient(270deg, rgba(51, 51, 51, 0.27) -16.97%, rgba(0, 0, 0, 0) 59.8%), #FFFFFF"})
+          setweatherIcon( {icon: WeatherIconCloud, style: "clouds"})
         } else if (data.weather[0].main.toLowerCase() == "snow"){
-          setweatherIcon( {icon: WeatherIconSnow, style: "linear-gradient(270deg, rgba(16, 167, 252, 0.27) -16.97%, rgba(0, 0, 0, 0) 59.8%), #FFFFFF"})
+          setweatherIcon( {icon: WeatherIconSnow, style: "snow"})
         } else if (data.weather[0].main.toLowerCase() == "thunderstorm"){
-          setweatherIcon( {icon: WeatherIconThunderStorm, style: "linear-gradient(270deg, #F80000 -16.97%, rgba(255, 0, 0, 0) 59.8%), #FFFFFF"})
+          setweatherIcon( {icon: WeatherIconThunderStorm, style: "thunderstorm"})
         }else{
-          setweatherIcon( {icon: WeatherIconSun, style: "linear-gradient(270deg, rgba(252, 129, 16, 0.27) -16.97%, rgba(0, 0, 0, 0) 59.8%), #FFFFFF"})
+          setweatherIcon( {icon: WeatherIconSun, style: "sun"})
         }
 
       } catch(error){
@@ -62,7 +66,7 @@ function Main({coordinates}) {
     <>
       { currentWeather
         ?
-        <div className="maindata" style={{background: weatherIcon ? weatherIcon.style : "none"}}>
+        <div className={`maindata ${theme ? "dark" : ''} ${weatherIcon.style}`}>
               
               <div className="data">
                 <div className="data1">

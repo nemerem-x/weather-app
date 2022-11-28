@@ -5,8 +5,15 @@ import Days from '../Components/Days'
 import './App.css'
 import AddButton from '/addbtn.png'
 import Logo from '/weatherapplogo.png'
+import appTheme from './recoil/themeAtom'
+import { useRecoilValue } from 'recoil'
 
 function App() {
+
+  const theme = useRecoilValue(appTheme)
+
+  const root = document.querySelector(':root');
+  root.style.setProperty('--backgroundColor',  theme ? '#3B465A' : '#f6f6f6');
 
   const [coordinates, setCoordinates] = useState(null)
   const [searchquery, setSearchquery] = useState(undefined)
@@ -85,15 +92,8 @@ function App() {
 
       </div> 
     
-      <div className="thirddata">
+      <div className={`thirddata ${theme ? "dark" : ""}`}>
         <div className="container">
-
-          {/* <div className="city">
-            <h3>21<span>&deg;</span></h3>
-            <img src={SunCloud} alt="weather" />
-            <h3>New York</h3>
-          </div> */}
-
           <div className='addButton'><img src={AddButton} alt="add" /></div>
           <p>Add your preferred cities here. (coming soon)</p>
         </div>

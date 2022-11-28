@@ -2,8 +2,18 @@ import { useState, useRef } from 'react'
 import '../src/App.css'
 import Logo from '/weatherapplogo.png'
 import DarkMode from '/darkmode.png'
+import appTheme from '../src/recoil/themeAtom'
+import { useRecoilValue } from 'recoil'
+import { useRecoilState } from 'recoil'
 
 function Nav({handleOnChange, handleOnSubmit, coordinates, searchResult}) {
+
+  const theme = useRecoilValue(appTheme)
+  const [_, setTheme] = useRecoilState(appTheme);
+
+  const onClick = (event) => {
+      setTheme(oldTheme =>!oldTheme);
+  };
 
   const [selected, setselected] = useState("")
   const inputField = useRef(null)
@@ -12,8 +22,6 @@ function Nav({handleOnChange, handleOnSubmit, coordinates, searchResult}) {
     setselected(e.target.textContent)
     inputField.current.value = ""
   }
-
-  // console.log(searchResult)
 
   const searchresults = searchResult.map(result => {
     return (
@@ -47,11 +55,11 @@ function Nav({handleOnChange, handleOnSubmit, coordinates, searchResult}) {
               </form>
 
               <div className="mode">
-                <img id='darkmode' src={DarkMode} alt="darkmode" />
+                <img onClick={onClick} id='darkmode' src={DarkMode} alt="darkmode" />
               </div>
           </div>
 
-          <div className={searchResult.length ? "searchResults active" : "searchResults"}>
+          <div className={searchResult.length ? `searchResults active ${theme ? "dark" : ""}` : "searchResults"}>
             <div className="result">
               {searchresults}
             </div>

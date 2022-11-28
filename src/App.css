@@ -1,9 +1,22 @@
+:root {
+  --backgroundColor: #f6f6f6;
+  --primaryColor: #f6f6f6;
+  --fontColor: #3B465A;
+  --white: #fff;
+  --secondaryFontColor: #C0C0C0;
+  --rain: rgba(106, 16, 252, 0.27);
+  --thunderstorm: #F80000;
+  --clouds: rgba(51, 51, 51, 0.27);
+  --snow: rgba(16, 167, 252, 0.27);
+  --sun: rgba(252, 129, 16, 0.27);
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: #f6f6f6;
+  background-color: var(--backgroundColor);
   margin: 0;
   font-family: 'Inter', sans-serif;
 }
@@ -12,7 +25,7 @@ h1 {
   position: relative;
   font-size: 6rem;
   font-weight: 600;
-  color: #3B465A;
+  color: var(--fontColor);
   margin: 0;
   line-height: 100%;
   width: fit-content;
@@ -28,7 +41,7 @@ h1 span {
 
 h3 {
   margin: 0;
-  color: #3B465A;
+  color: var(--fontColor);
   font-size: 1.3rem;
   line-height: 100%;
 }
@@ -36,28 +49,28 @@ h3 {
 h4 {
   cursor: pointer;
   margin: 0;
-  color: #8c8c8c;
+  color: var(--fontColor);
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 100%;
   padding-bottom: 0.6em;
   padding-left: 0.8em;
   padding-top: 0.6em;
-  border-bottom: 1px solid #dadada ;
+  border-bottom: 1px solid var(--secondaryFontColor) ;
 }
 
 h4:hover{
-  background-color: #e9e9e9;
-  border-radius: 10px;
+  background-color: var(--secondaryFontColor);
 }
 
-h4:nth-last-child(1){
+h4:last-child{
   border-bottom: none ;
+  border-radius: 0 0 20px 20px;
   margin: 0;
 }
 
 p {
-  color: #C0C0C0;
+  color: var(--secondaryFontColor);
   font-size: 1rem;
   margin: 0;
 }
@@ -96,7 +109,8 @@ form {
   border: none;
   padding: 1.5em;
   font-size: 0.8rem;
-  color: rgb(160, 160, 160);
+  background-color: var(--white);
+  color: var(--fontColor);
 }
 
 form button {
@@ -105,13 +119,13 @@ form button {
   position: absolute;
   height: 2.3em;
   width: 5em;
-  background-color: #3b465a;
-  color: white;
+  background-color: var(--fontColor);
+  color: var(--primaryColor);
   border-radius: 40px;
 }
 
 .navbar input:focus {
-  border: 2px solid rgb(216, 215, 215);
+  border: 2px solid var(--secondaryFontColor);
   outline: none;
 }
 
@@ -135,18 +149,23 @@ form button {
   display: block;
   position: absolute;
   height: auto;
-  padding: 0.8em;
+  /* padding: 0.8em; */
   width: 20em;
-  background-color: #fff;
+  background-color: var(--backgroundColor);
   z-index: 1;
   border-radius: 20px;
   left: 49%;
   transform: translateX(-50%);
   box-shadow: 0px 21px 31px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--secondaryFontColor);
 }
 
 .searchResults {
   display: none;
+}
+
+.searchResults h4 {
+  padding: 0.8em;
 }
 
 .maindata {
@@ -157,11 +176,34 @@ form button {
   max-width: 50em;
   height: 14em;
   border-radius: 40px;
-  background-color: #fff;
   margin: 3em auto 1.5em auto;
   padding: 2em 4em 3em 4em;
-  background: linear-gradient(270deg, rgba(252, 129, 16, 0.27) -16.97%, rgba(0, 0, 0, 0) 59.8%), #FFFFFF;
   box-shadow: 0px 21px 31px 12px rgba(0, 0, 0, 0.05);
+}
+
+.rain {
+  background-color: var(--backgroundColor);
+  background: linear-gradient(270deg, var(--rain) -16.97%, var(--backgroundColor) 59.8%)
+}
+
+.clouds {
+  background-color: var(--backgroundColor);
+  background: linear-gradient(270deg, var(--clouds) -16.97%, var(--backgroundColor) 59.8%)
+}
+
+.snow {
+  background-color: var(--backgroundColor);
+  background: linear-gradient(270deg, var(--snow) -16.97%, var(--backgroundColor) 59.8%)
+}
+
+.thunderstorm {
+  background-color: var(--backgroundColor);
+  background: linear-gradient(270deg, var(--thunderstorm) -16.97%, var(--backgroundColor) 59.8%)
+}
+
+.sun {
+  background-color: var(--backgroundColor);
+  background: linear-gradient(270deg, var(--sun) -16.97%, var(--backgroundColor) 59.8%)
 }
 
 .loading {
@@ -215,7 +257,7 @@ form button {
 .dot.active {
   height: 0.6em;
   width: 0.6em;
-  background-color: #2E2E2E;
+  background-color: var(--fontColor);
   border-radius: 50%;
 }
 
@@ -236,7 +278,7 @@ form button {
   max-width: 50em;
   height: auto;
   border-radius: 40px;
-  background-color: #fff;
+  background-color: var(--primaryColor);
   margin: auto;
   padding: 3em;
   box-shadow: 0px 21px 31px 12px rgba(0, 0, 0, 0.05);
@@ -255,7 +297,7 @@ form button {
 }
 
 .seconddata p {
-  color: #C0C0C0;
+  color: var(--secondaryFontColor);
   font-size: 0.8rem;
   margin: 0;
 }
@@ -268,8 +310,21 @@ form button {
   gap: 15px;
   width: 100%;
   height: 7em;
-  background-color: #fff;
+  background-color: var(--white);
   margin: 2em auto;
+}
+
+.dark {
+  background-color: var(--backgroundColor);
+  box-shadow: 0px 21px 31px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dark h1 {
+  color: var(--white);
+}
+
+.dark h4 {
+  color: var(--white);
 }
 
 .container {
@@ -296,7 +351,7 @@ form button {
 
 .city h3 {
   margin: 0;
-  color: #3B465A;
+  color: var(--fontColor);
   font-size: 0.8rem;
   line-height: 100%;
 }
@@ -316,7 +371,6 @@ button {
   gap: 10px;
   align-items: center;
   justify-content: center;
-  /* padding-bottom: 1em; */
 }
 
 .footer img {
