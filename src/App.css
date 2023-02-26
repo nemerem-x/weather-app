@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --backgroundColor: #f6f6f6;
   --primaryColor: #f6f6f6;
@@ -388,13 +392,13 @@ button {
   cursor: pointer;
 }
 
-.footer {
+/* .footer {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: center;
   margin-bottom: 3em;
-}
+} */
 
 .footer img {
   width: 7em;

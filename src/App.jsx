@@ -3,6 +3,7 @@ import Nav from '../Components/Nav'
 import Main from '../Components/Main'
 import Days from '../Components/Days'
 import './App.css'
+import './index.css'
 import AddButton from '/addbtn.png'
 import Logo from '/weatherapplogo.png'
 import Logo_light from '/weatherapplogolight.png'
@@ -100,7 +101,7 @@ function App() {
         </div>
       </div> 
 
-      <div className="footer">
+      <div className="flex gap-10 items-center justify-center mb-3">
         <img src={theme ? Logo_light : Logo} alt="logo" /> <p>Built with React</p>
       </div>
     </>
