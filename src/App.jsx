@@ -95,7 +95,7 @@ function App() {
     
       <div className={`thirddata ${theme ? "dark" : ""}`}>
         <div className="flex gap-3 px-7.5 items-center m-auto">
-          <div className='addButton'><img src={AddButton} alt="add" /></div>
+          <div><img className='w-12 cursor-pointer' src={AddButton} alt="add" /></div>
           <p>Add your preferred cities here. (coming soon)</p>
         </div>
       </div> 

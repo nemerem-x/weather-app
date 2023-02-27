@@ -387,10 +387,10 @@ button {
   border: none;
 }
 
-.addButton img {
+/* .addButton img {
   width: 3em;
   cursor: pointer;
-}
+} */
 
 /* .footer {
   display: flex;
