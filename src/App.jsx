@@ -3,7 +3,6 @@ import Nav from '../Components/Nav'
 import Main from '../Components/Main'
 import Days from '../Components/Days'
 import './App.css'
-import './index.css'
 import AddButton from '/addbtn.png'
 import Logo from '/weatherapplogo.png'
 import Logo_light from '/weatherapplogolight.png'
@@ -95,14 +94,14 @@ function App() {
       </div> 
     
       <div className={`thirddata ${theme ? "dark" : ""}`}>
-        <div className="container">
+        <div className="flex gap-3 px-7.5 items-center m-auto">
           <div className='addButton'><img src={AddButton} alt="add" /></div>
           <p>Add your preferred cities here. (coming soon)</p>
         </div>
       </div> 
 
       <div className="flex gap-10 items-center justify-center mb-3">
-        <img src={theme ? Logo_light : Logo} alt="logo" /> <p>Built with React</p>
+        <img className='w-28 h-full' src={theme ? Logo_light : Logo} alt="logo" /> <p>Built with React</p>
       </div>
     </>
   )

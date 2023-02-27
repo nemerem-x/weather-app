@@ -353,14 +353,14 @@ form button {
   color: var(--white);
 }
 
-.container {
+/* .container {
   width: 50em;
   margin: auto;
   display: flex;
   gap: 3em;
   padding: 0 7.5em;
   align-items: center;
-}
+} */
 
 .city {
   display: flex;
@@ -400,10 +400,10 @@ button {
   margin-bottom: 3em;
 } */
 
-.footer img {
+/* .footer img {
   width: 7em;
   height: 100%;
-}
+} */
 
 .logoMobile {
   display: none;
