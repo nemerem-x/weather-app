@@ -52,7 +52,7 @@ function Nav({handleOnChange, handleOnSubmit, coordinates, searchResult}) {
                   type="text"
                   placeholder='Search city'
                 />
-                <button onClick={handleOnSubmit} type="submit">Search</button>
+                <button className='bg-slate-800' onClick={handleOnSubmit} type="submit">Search</button>
               </form>
 
               <div className="mode">

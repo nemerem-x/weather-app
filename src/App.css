@@ -324,7 +324,7 @@ form button {
   margin: 0;
 }
 
-.thirddata {
+/* .thirddata {
   position: relative;
   display: flex;
   align-items: center;
@@ -334,7 +334,7 @@ form button {
   height: 7em;
   background-color: var(--white);
   margin: 2em auto;
-}
+} */
 
 .dark {
   background-color: var(--backgroundColor);
