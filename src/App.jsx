@@ -14,7 +14,7 @@ function App() {
   const theme = useRecoilValue(appTheme)
 
   const root = document.querySelector(':root');
-  root.style.setProperty('--backgroundColor',  theme ? '#3B465A' : '#f6f6f6');
+  root.style.setProperty('--backgroundColor',  theme ? '#1E293B' : '#f6f6f6');
 
   const [coordinates, setCoordinates] = useState(null)
   const [searchquery, setSearchquery] = useState(undefined)
@@ -93,9 +93,7 @@ function App() {
 
       </div> 
     
-      {/* <div className={`thirddata ${theme ? "dark" : ""}`}> */}
-
-      <div className="flex justify-center items-center gap-15px w-full h-28 bg-white dark:bg-slate-800 my-8 mx-auto">
+      <div className={`flex justify-center items-center gap-15px w-full h-28 ${theme ? "bg-slate-800" : "bg-white"} my-8 mx-auto`}>
         <div className="flex gap-3 px-7.5 items-center m-auto">
           <div><img className='w-12 cursor-pointer' src={AddButton} alt="add" /></div>
           <p>Add your preferred cities here. (coming soon)</p>
