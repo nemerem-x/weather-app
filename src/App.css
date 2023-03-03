@@ -102,47 +102,6 @@ p {
   height: 50px;
 }
 
-/* form {
-  position: relative;
-  width: 20em;
-  height: 2.5em;
-  display: flex;
-  align-items: center;
-} */
-
-/* .navbar input{
-  position: absolute;
-  border-radius: 40px;
-  height: 2.5em;
-  width: 100%;
-  border: none;
-  padding: 1.5em;
-  font-size: 0.8rem;
-  background-color: var(--white);
-  color: var(--fontColor);
-} */
-
-/* form button {
-  cursor: pointer;
-  right: 5.5px;
-  position: absolute;
-  height: 2.3em;
-  width: 5em;
-  background-color: var(--fontColor);
-  color: var(--primaryColor);
-  border-radius: 40px;
-} */
-
-.navbar input:focus {
-  border: 2px solid var(--secondaryFontColor);
-  outline: none;
-}
-
-.navbar img {
-  max-width: 150px;
-  display: block;
-}
-
 .mode {
   width: 10em;
   display: flex;
