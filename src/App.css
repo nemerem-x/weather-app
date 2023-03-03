@@ -93,11 +93,10 @@ p {
   cursor: pointer;
 }
 
-.searchResults.active {
+/* .searchResults.active {
   display: block;
   position: absolute;
   height: auto;
-  /* padding: 0.8em; */
   width: 20em;
   background-color: var(--backgroundColor);
   z-index: 1;
@@ -106,15 +105,15 @@ p {
   transform: translateX(-50%);
   box-shadow: 0px 21px 31px 12px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--secondaryFontColor);
-}
+} */
 
-.searchResults {
+/* .searchResults {
   display: none;
 }
 
 .searchResults h4 {
   padding: 0.8em;
-}
+} */
 
 .maindata {
   position: relative;
