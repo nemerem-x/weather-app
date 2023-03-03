@@ -88,26 +88,6 @@ p {
   padding: 0 4em;
 }
 
-.nav {
-  width: 100%;
-  padding: 1em 0;
-  position: relative;
-}
-
-/* .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: auto;
-  height: 50px;
-} */
-
-.mode {
-  width: 10em;
-  display: flex;
-  justify-content: flex-end;
-}
-
 #darkmode {
   max-width: 40px;
   cursor: pointer;
@@ -320,39 +300,10 @@ p {
   line-height: 100%;
 }
 
-/* .logoMobile {
-  display: none;
-} */
-
-.mode {
-  cursor: pointer;
-}
-
 @media screen and (max-width: 768px){
   .app{
     padding: 0 3em;
   }
-
-  /* .logoMobile {
-    display: block;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 3em;
-  } */
-
-  /* .logoMobile img {
-    max-width: 150px;
-  } */
-
-  /* .navbar {
-    justify-content: center;
-    gap: 45px;
-  }
-
-  .navbar img {
-    display: none;
-  } */
 
   #darkmode {
     display: block;
@@ -360,10 +311,6 @@ p {
 
   form {
     margin-left: 0;
-  }
-
-  .mode {
-    width: fit-content;
   }
 
   .maindata {
