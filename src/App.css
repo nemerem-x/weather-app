@@ -94,13 +94,13 @@ p {
   position: relative;
 }
 
-.navbar {
+/* .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: auto;
   height: 50px;
-}
+} */
 
 .mode {
   width: 10em;
@@ -320,9 +320,9 @@ p {
   line-height: 100%;
 }
 
-.logoMobile {
+/* .logoMobile {
   display: none;
-}
+} */
 
 .mode {
   cursor: pointer;
@@ -333,26 +333,26 @@ p {
     padding: 0 3em;
   }
 
-  .logoMobile {
+  /* .logoMobile {
     display: block;
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 3em;
-  }
+  } */
 
-  .logoMobile img {
+  /* .logoMobile img {
     max-width: 150px;
-  }
+  } */
 
-  .navbar {
+  /* .navbar {
     justify-content: center;
     gap: 45px;
   }
 
   .navbar img {
     display: none;
-  }
+  } */
 
   #darkmode {
     display: block;

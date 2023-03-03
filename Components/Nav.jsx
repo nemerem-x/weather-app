@@ -38,10 +38,10 @@ function Nav({ handleOnChange, handleOnSubmit, coordinates, searchResult }) {
 
   return (
     <>
-      <div className="logoMobile"><img src={theme ? Logo_light : Logo} alt="logo" /></div>
+      <div className='flex m-auto max-w-[150px] md:hidden w-full justify-center mt-9'><img src={theme ? Logo_light : Logo} alt="logo" /></div>
       <div className="nav">
-        <div className="navbar">
-          <img className='max-w-[150px] block' src={theme ? Logo_light : Logo} alt="logo" />
+        <div className="flex items-center justify-center md:justify-between m-auto h-12 ">
+          <img className='max-w-[150px] hidden md:block' src={theme ? Logo_light : Logo} alt="logo" />
 
           <div className='relative flex items-center h-10 w-80'>
             <input
