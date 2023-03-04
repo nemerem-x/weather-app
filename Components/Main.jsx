@@ -41,15 +41,15 @@ function Main({coordinates}) {
         setCurrentWeather(data)
         
         if (data.weather[0].main.toLowerCase() == "rain"){
-          setweatherIcon( {icon: WeatherIconRain, style: "rain"})
+          setweatherIcon( {icon: WeatherIconRain, style: "to-purple-400"})
         } else if (data.weather[0].main.toLowerCase() == "clouds"){
-          setweatherIcon( {icon: WeatherIconCloud, style: "clouds"})
+          setweatherIcon( {icon: WeatherIconCloud, style: "to-gray-400"})
         } else if (data.weather[0].main.toLowerCase() == "snow"){
-          setweatherIcon( {icon: WeatherIconSnow, style: "snow"})
+          setweatherIcon( {icon: WeatherIconSnow, style: "to-emerald-400"})
         } else if (data.weather[0].main.toLowerCase() == "thunderstorm"){
-          setweatherIcon( {icon: WeatherIconThunderStorm, style: "thunderstorm"})
+          setweatherIcon( {icon: WeatherIconThunderStorm, style: "to-red-600"})
         }else{
-          setweatherIcon( {icon: WeatherIconSun, style: "sun"})
+          setweatherIcon( {icon: WeatherIconSun, style: "to-yellow-400"})
         }
 
       } catch(error){
@@ -66,11 +66,13 @@ function Main({coordinates}) {
     <>
       { currentWeather
         ?
-        <div className={`relative flex flex-col items-center max-w-[50em] h-56 rounded-[40px] mt-12 mb-6 mx-auto pt-8 pb-12 px-16 shadow-lg ${theme ? "dark" : ''} ${weatherIcon.style}`}>
+        <div className={`relative flex flex-col items-center max-w-[50em] h-56 rounded-[40px] mt-12 mb-6 mx-auto pt-8 pb-12 px-16 shadow-lg 
+        ${theme ? `bg-gradient-to-r from-slate-800 ${weatherIcon.style}` : `bg-gradient-to-r from-gray-200 ${weatherIcon.style}`}`}>
               
               <div className="flex items-center justify-between w-full h-full">
                 <div className="data1">
-                  <h1>{currentWeather.main.temp.toFixed(0)} <span>&deg;C</span></h1>
+                  <h1 className={`${theme ? "text-white" : "text-slate-800"}`}
+                  >{currentWeather.main.temp.toFixed(0)} <span>&deg;C</span></h1>
                   <p>{currentWeather.name}, {currentWeather.sys.country}</p>
                 </div>
     

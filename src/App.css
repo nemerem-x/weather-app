@@ -56,38 +56,9 @@ p {
   margin: 0;
 }
 
-/* .app {
-  padding: 0 4em;
-} */
-
 #darkmode {
   max-width: 40px;
   cursor: pointer;
-}
-
-.rain {
-  background-color: var(--backgroundColor);
-  background: linear-gradient(270deg, var(--rain) -16.97%, var(--backgroundColor) 59.8%)
-}
-
-.clouds {
-  background-color: var(--backgroundColor);
-  background: linear-gradient(270deg, var(--clouds) -16.97%, var(--backgroundColor) 59.8%)
-}
-
-.snow {
-  background-color: var(--backgroundColor);
-  background: linear-gradient(270deg, var(--snow) -16.97%, var(--backgroundColor) 59.8%)
-}
-
-.thunderstorm {
-  background-color: var(--backgroundColor);
-  background: linear-gradient(270deg, var(--thunderstorm) -16.97%, var(--backgroundColor) 59.8%)
-}
-
-.sun {
-  background-color: var(--backgroundColor);
-  background: linear-gradient(270deg, var(--sun) -16.97%, var(--backgroundColor) 59.8%)
 }
 
 .loading {
@@ -189,11 +160,6 @@ p {
   font-size: 0.8rem;
   margin: 0;
 }
-
-/* .dark {
-  background-color: var(--backgroundColor);
-  box-shadow: 0px 21px 31px 12px rgba(0, 0, 0, 0.08);
-} */
 
 .dark h1 {
   color: var(--white);
