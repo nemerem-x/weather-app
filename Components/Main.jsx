@@ -66,7 +66,7 @@ function Main({coordinates}) {
     <>
       { currentWeather
         ?
-        <div className={`maindata ${theme ? "dark" : ''} ${weatherIcon.style}`}>
+        <div className={`relative flex flex-col items-center max-w-[50em] h-56 rounded-[40px] mt-12 mb-6 mx-auto pt-8 pb-12 px-16 shadow-lg ${theme ? "dark" : ''} ${weatherIcon.style}`}>
               
               <div className="flex items-center justify-between w-full h-full">
                 <div className="data1">

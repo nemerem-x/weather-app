@@ -13,8 +13,8 @@ function App() {
 
   const theme = useRecoilValue(appTheme)
 
-  const root = document.querySelector(':root');
-  root.style.setProperty('--backgroundColor',  theme ? '#1E293B' : '#f6f6f6');
+  // const root = document.querySelector(':root');
+  // root.style.setProperty('--backgroundColor',  theme ? '#1E293B' : '#f6f6f6');
 
   const [coordinates, setCoordinates] = useState(null)
   const [searchquery, setSearchquery] = useState(undefined)
@@ -77,8 +77,8 @@ function App() {
   }
 
   return (
-    <>
-      <div className="app">
+    <div className={`h-full w-full py-8 ${theme ? "bg-slate-800" : "bg-gray-200"}`}>
+      <div className="py-0 px-12 md:px-16">
 
         <Nav 
           searchResult={searchResult ? searchResult : []}
@@ -92,7 +92,7 @@ function App() {
         <Days coordinates={coordinates} />
 
       </div> 
-    
+
       <div className={`flex justify-center items-center gap-15px w-full h-28 ${theme ? "bg-slate-800" : "bg-white"} my-8 mx-auto`}>
         <div className="flex gap-3 px-7.5 items-center m-auto">
           <div><img className='w-12 cursor-pointer' src={AddButton} alt="add" /></div>
@@ -100,10 +100,11 @@ function App() {
         </div>
       </div> 
 
-      <div className="flex gap-10 items-center justify-center mb-3">
+      <div className="flex gap-10 items-center justify-center py-2">
         <img className='w-28 h-full' src={theme ? Logo_light : Logo} alt="logo" /> <p>Built with React</p>
       </div>
-    </>
+    
+    </div>
   )
 }
 
