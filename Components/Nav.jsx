@@ -27,7 +27,7 @@ function Nav({ handleOnChange, handleOnSubmit, coordinates, searchResult }) {
   const searchresults = searchResult.map(result => {
     return (
       <h4
-        className='p-6'
+        className={`p-6 cursor-pointer first:rounded-t-xl last:rounded-b-xl hover:text-gray-50  ${theme ? "hover:bg-slate-800" : "hover:bg-slate-600"}`}
         onTouchEnd={(e) => handleOnSubmit(e, selected)}
         onMouseUp={(e) => handleOnSubmit(e, selected)}
         onTouchStart={select}
@@ -69,17 +69,11 @@ function Nav({ handleOnChange, handleOnSubmit, coordinates, searchResult }) {
           </div>
         </div>
 
-        <div className={`${searchResult.length ? "block" : "hidden"} absolute h-auto w-80 bg-gray-200 z-10 rounded-2xl left-[45%] md:left-[52%] translate-x-[-50%] border-2 border-gray-300 drop-shadow-xl`}>
+        <div className={`${searchResult.length ? "block" : "hidden"} absolute h-auto w-80 ${theme ? "bg-slate-600" : "bg-gray-200"}  z-10 rounded-2xl left-[45%] md:left-[53%] translate-x-[-50%] border-2 ${theme ? "border-slate-800" : "border-gray-200"} drop-shadow-xl`}>
           <div className="result">
             {searchresults}
           </div>
         </div>
-
-        {/* <div className={searchResult.length ? `searchResults active ${theme ? "dark" : ""}` : "searchResults"}>
-          <div className="result">
-            {searchresults}
-          </div>
-        </div> */}
 
       </div>
     </>
