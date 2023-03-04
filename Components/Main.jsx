@@ -66,7 +66,7 @@ function Main({coordinates}) {
     <>
       { currentWeather
         ?
-        <div className={`relative flex flex-col items-center max-w-[50em] h-56 rounded-[40px] mt-12 mb-6 mx-auto pt-8 pb-12 px-16 shadow-lg 
+        <div className={`relative flex box-border flex-col items-center max-w-[50em] h-56 rounded-[40px] mt-12 mb-6 mx-auto pt-8 pb-12 px-16 shadow-lg 
         ${theme ? `bg-gradient-to-r from-slate-800 ${weatherIcon.style}` : `bg-gradient-to-r from-gray-200 ${weatherIcon.style}`}`}>
               
               <div className="flex items-center justify-between w-full h-full">

@@ -9,7 +9,7 @@ import { useRecoilValue } from 'recoil'
 import Loading from './Loading'
 import '../src/App.css'
 
-function Days({coordinates}) {
+function Days({ coordinates }) {
 
   const theme = useRecoilValue(appTheme)
 
@@ -17,14 +17,14 @@ function Days({coordinates}) {
   const [latitude, setLatitude] = useState(null)
   const [longitude, setLongitude] = useState(null)
 
-  useEffect(()=>{
-    if(coordinates){
-        const {lon, lat} = coordinates
-        setLatitude(lat)
-        setLongitude(lon)
+  useEffect(() => {
+    if (coordinates) {
+      const { lon, lat } = coordinates
+      setLatitude(lat)
+      setLongitude(lon)
     }
-  },[coordinates])
-  
+  }, [coordinates])
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -32,48 +32,52 @@ function Days({coordinates}) {
         const data = await res.json()
         setCurrentWeather(data)
 
-      } catch(error){
+      } catch (error) {
         console.log(error)
       }
     }
-    if(latitude && longitude){
+    if (latitude && longitude) {
       fetchData()
     }
-  },[latitude || longitude])
+  }, [latitude || longitude])
 
 
   const name = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   const fourDaysWeather = () => {
 
     const days = currentWeather.list.map((item, index) => {
-      if (index == 22 || index == 7 || index == 15 || index == 29){
+      if (index == 22 || index == 7 || index == 15 || index == 29) {
         return item
       }
-      }).filter(ele => ele != undefined).map(item => {
+    }).filter(ele => ele != undefined).map(item => {
 
-        const date = new Date(item.dt * 1000)
+      const date = new Date(item.dt * 1000)
 
-        const theWeatherIcon = () => {
-          if (item.weather[0].main.toLowerCase() == "rain"){
-            return  WeatherIconRainSmall
-          } else if (item.weather[0].main.toLowerCase() == "clouds"){
-              return WeatherIconCloudSmall
-          } else if (item.weather[0].main.toLowerCase() == "snow"){
-            return WeatherIconSnowSmall
-          } else if (item.weather[0].main.toLowerCase() == "thunderstorm"){
-            return WeatherIconThunderStormSmall
-          }else{
-            return  WeatherIconSunSmall
-          }
+      const theWeatherIcon = () => {
+        if (item.weather[0].main.toLowerCase() == "rain") {
+          return WeatherIconRainSmall
+        } else if (item.weather[0].main.toLowerCase() == "clouds") {
+          return WeatherIconCloudSmall
+        } else if (item.weather[0].main.toLowerCase() == "snow") {
+          return WeatherIconSnowSmall
+        } else if (item.weather[0].main.toLowerCase() == "thunderstorm") {
+          return WeatherIconThunderStormSmall
+        } else {
+          return WeatherIconSunSmall
         }
-        
+      }
+
       return (
-        <div key={item.dt} className="firsthour">
-            <img src={theWeatherIcon()} alt="weather" />
-            <div className="info">
-              <h3>{parseInt(item.main.temp)}<span>&deg;</span></h3>
-              <p>{name[date.getDay()]} {date.getDate()}</p>
-            </div>
+        <div key={item.dt} className="flex flex-col items-center gap-2 justify-center md:flex-row">
+          <img className='h-full w-12' src={theWeatherIcon()} alt="weather" />
+          <div className="info">
+            <h3 className={`${theme ? "text-white" : "text-slate-800"}`}>
+              {parseInt(item.main.temp)}<span>&deg;</span>
+            </h3>
+            <p>
+              {name[date.getDay()]} {date.getDate()}
+            </p>
+          </div>
         </div>
       )
     })
@@ -82,15 +86,16 @@ function Days({coordinates}) {
 
   return (
     <>
-      { currentWeather
+      {currentWeather
         ?
-        <div className={`seconddata ${theme ? "dark" : ''}`}>
+        <div className={`relative flex items-center justify-between gap-4 max-w-3xl 
+        h-auto rounded-[40px] m-auto p-12 shadow-lg ${theme ? "bg-slate-800" : 'bg-gray-100'}`}>
 
           {fourDaysWeather()}
 
         </div>
         :
-        <Loading/>
+        <Loading />
       }
     </>
   )

@@ -7,8 +7,10 @@ function Loading() {
   const theme = useRecoilValue(appTheme)
 
   return (
-    <div className={`loading ${theme ? "dark" : ""}`}>
-      <p>Search city to see forecast.</p>
+    <div className={`animate-pulse ${theme ? "dark" : ""}`}>
+      <div className={`flex justify-center items-center max-w-[50em] h-[9em] rounded-[40px] m-auto ${theme ? "bg-slate-700" : "bg-gray-300"}`}>
+        <p className={`${theme ? "text-gray-400" : "text-gray-600"}`}>Search city to see forecast.</p>
+      </div>
     </div>
   )
 }
