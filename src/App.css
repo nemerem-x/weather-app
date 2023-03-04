@@ -101,10 +101,6 @@ p {
   }
 }
 
-#weathericon {
-  max-width: 15%;
-}
-
 .dots {
   display: flex;
   align-items: center;
@@ -201,10 +197,6 @@ p {
 
   form {
     margin-left: 0;
-  }
-
-  .maindata {
-    margin-top: 1em;
   }
 
   .container {

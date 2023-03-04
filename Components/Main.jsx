@@ -70,13 +70,16 @@ function Main({coordinates}) {
         ${theme ? `bg-gradient-to-r from-slate-800 ${weatherIcon.style}` : `bg-gradient-to-r from-gray-200 ${weatherIcon.style}`}`}>
               
               <div className="flex items-center justify-between w-full h-full">
-                <div className="data1">
-                  <h1 className={`${theme ? "text-white" : "text-slate-800"}`}
-                  >{currentWeather.main.temp.toFixed(0)} <span>&deg;C</span></h1>
-                  <p>{currentWeather.name}, {currentWeather.sys.country}</p>
+                <div>
+                  <h1 className={`${theme ? "text-white" : "text-slate-800"}`}>
+                    {currentWeather.main.temp.toFixed(0)} <span>&deg;C</span>
+                  </h1>
+                  <p className={`${theme ? "text-white" : "text-slate-800"}`}>
+                    {currentWeather.name}, {currentWeather.sys.country}
+                  </p>
                 </div>
     
-                <img id='weathericon' src={weatherIcon ? weatherIcon.icon : WeatherIconSun} alt="weather" />
+                <img className='max-w-[15%]' src={weatherIcon ? weatherIcon.icon : WeatherIconSun} alt="weather" />
               </div>
     
               <div className="dots">
