@@ -56,11 +56,6 @@ p {
   margin: 0;
 }
 
-#darkmode {
-  max-width: 40px;
-  cursor: pointer;
-}
-
 .loading {
   display: flex;
   justify-content: center;
@@ -99,29 +94,6 @@ p {
   100%{
       background-position: -100% 0;
   }
-}
-
-.dots {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  position: absolute;
-  bottom: 1em;
-}
-
-.dot.active {
-  height: 0.6em;
-  width: 0.6em;
-  background-color: var(--fontColor);
-  border-radius: 50%;
-}
-
-.dot {
-  height: 0.5em;
-  width: 0.5em;
-  border-radius: 50%;
-  background-color: #D5D5D5;
-  cursor: pointer;
 }
 
 .seconddata {
@@ -187,22 +159,6 @@ p {
   color: var(--fontColor);
   font-size: 0.8rem;
   line-height: 100%;
-}
-
-@media screen and (max-width: 768px){
-
-  #darkmode {
-    display: block;
-  }
-
-  form {
-    margin-left: 0;
-  }
-
-  .container {
-    padding: 0 2em;
-  }
-
 }
 
 @media screen and (max-width: 630px) {
