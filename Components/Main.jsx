@@ -68,7 +68,7 @@ function Main({coordinates}) {
         ?
         <div className={`maindata ${theme ? "dark" : ''} ${weatherIcon.style}`}>
               
-              <div className="data">
+              <div className="flex items-center justify-between w-full h-full">
                 <div className="data1">
                   <h1>{currentWeather.main.temp.toFixed(0)} <span>&deg;C</span></h1>
                   <p>{currentWeather.name}, {currentWeather.sys.country}</p>

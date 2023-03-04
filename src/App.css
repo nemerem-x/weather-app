@@ -144,13 +144,13 @@ p {
 }
 
 
-.data {
+/* .data {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+} */
 
 #weathericon {
   max-width: 15%;
@@ -268,16 +268,6 @@ p {
 
   .container {
     padding: 0 2em;
-  }
-
-  .searchResults {
-    display: none;
-  }
-
-  .searchResults.active {
-    left: 45%;
-    transform: translateX(-50%);
-    display: block;
   }
 
 }
