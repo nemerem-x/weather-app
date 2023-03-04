@@ -93,15 +93,15 @@ function App() {
 
       </div> 
 
-      <div className={`flex justify-center items-center gap-15px w-full h-28 ${theme ? "bg-slate-800" : "bg-white"} my-8 mx-auto`}>
-        <div className="flex gap-3 px-7.5 items-center m-auto">
+      <div className={`flex justify-center items-center gap-15px w-full h-28 ${theme ? "bg-slate-800" : "bg-white"} py-8 my-8 mx-auto`}>
+        <div className="flex gap-3 px-7.5 items-center m-auto px-10">
           <div><img className='w-12 cursor-pointer' src={AddButton} alt="add" /></div>
           <p>Add your preferred cities here. (coming soon)</p>
         </div>
       </div> 
 
-      <div className="flex gap-10 items-center justify-center py-2">
-        <img className='w-28 h-full' src={theme ? Logo_light : Logo} alt="logo" /> <p>Built with React</p>
+      <div className="flex grow gap-10 items-center justify-center py-2">
+        <img className='h-auto w-36' src={theme ? Logo_light : Logo} alt="logo" /> <p>Built with React</p>
       </div>
     
     </div>

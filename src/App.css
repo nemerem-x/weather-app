@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  html, body, #root {
     font-family: 'Inter', sans-serif;
+    @apply h-full;
   }
 
   h1 {

@@ -26,7 +26,7 @@ function Nav({ handleOnChange, handleOnSubmit, coordinates, searchResult }) {
   const searchresults = searchResult.map(result => {
     return (
       <h4
-        className={`p-6 cursor-pointer first:rounded-t-xl last:rounded-b-xl hover:text-gray-50  ${theme ? "hover:bg-slate-400" : "hover:bg-slate-600"}`}
+        className={`p-6 cursor-pointer last:border-none border-b-[1px] first:rounded-t-xl last:rounded-b-xl   ${theme ? "border-gray-600 hover:bg-slate-800 text-gray-50" : "border-gray-300 hover:bg-slate-800 hover:text-gray-50"}`}
         onTouchEnd={(e) => handleOnSubmit(e, selected)}
         onMouseUp={(e) => handleOnSubmit(e, selected)}
         onTouchStart={select}
@@ -68,7 +68,7 @@ function Nav({ handleOnChange, handleOnSubmit, coordinates, searchResult }) {
           </div>
         </div>
 
-        <div className={`${searchResult.length ? "block" : "hidden"} absolute h-auto w-80 ${theme ? "bg-slate-600" : "bg-gray-200"}  z-10 rounded-2xl left-[45%] md:left-[53%] translate-x-[-50%] border-2 ${theme ? "border-slate-800" : "border-gray-200"} drop-shadow-xl`}>
+        <div className={`${searchResult.length ? "block" : "hidden"} absolute h-auto w-80 ${theme ? "bg-slate-700" : "bg-gray-200"}  z-10 rounded-2xl left-[45%] md:left-[53%] translate-x-[-50%] border-2 ${theme ? "border-slate-700" : "border-gray-200"} drop-shadow-xl`}>
           <div>
             {searchresults}
           </div>
