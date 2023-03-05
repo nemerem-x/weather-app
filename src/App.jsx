@@ -77,7 +77,7 @@ function App() {
   }
 
   return (
-    <div className={`flex flex-col h-full w-full py-8 ${theme ? "bg-slate-800" : "bg-gray-200"}`}>
+    <div className={`flex flex-col w-full ${theme ? "bg-slate-800" : "bg-gray-200"}`}>
       <div className="py-0 px-12 md:px-16">
 
         <Nav 
@@ -93,14 +93,14 @@ function App() {
 
       </div> 
 
-      <div className={`flex justify-center items-center gap-15px w-full h-28 ${theme ? "bg-slate-800" : "bg-white"} py-8 my-8 mx-auto`}>
-        <div className="flex gap-3 px-7.5 items-center m-auto px-10">
+      <div className={`flex justify-center items-center gap-15px w-full h-28 ${theme ? "bg-slate-700" : "bg-white"} py-8 my-0 mx-auto`}>
+        <div className="flex gap-3 items-center m-auto px-10">
           <div><img className='w-12 cursor-pointer' src={AddButton} alt="add" /></div>
           <p>Add your preferred cities here. (coming soon)</p>
         </div>
       </div> 
 
-      <div className="flex grow gap-10 items-center justify-center py-2">
+      <div className="flex grow gap-10 items-center justify-center py-8">
         <img className='h-auto w-36' src={theme ? Logo_light : Logo} alt="logo" /> <p>Built with React</p>
       </div>
     

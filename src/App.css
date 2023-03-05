@@ -19,11 +19,10 @@
   }
   
   h1 span {
-    line-height: 100%;
-    position: absolute;
-    top: 10px;
-    font-size: 2rem;
-    right: -1em;
+    @apply absolute;
+    @apply top-3;
+    @apply text-xl;
+    @apply right-[-1];
   }
   
   h3 {

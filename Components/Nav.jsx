@@ -39,7 +39,7 @@ function Nav({ handleOnChange, handleOnSubmit, coordinates, searchResult }) {
   return (
     <>
       <div className='flex m-auto max-w-[150px] md:hidden w-full justify-center mt-4 mb-8'><img src={theme ? Logo_light : Logo} alt="logo" /></div>
-      <div className="relative w-full py-0">
+      <div className="relative w-full pt-2">
         <div className="flex items-center justify-center md:justify-between m-auto h-12 ">
           <img className='max-w-[150px] hidden md:block' src={theme ? Logo_light : Logo} alt="logo" />
 
