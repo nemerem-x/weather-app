@@ -22,7 +22,7 @@
     @apply absolute;
     @apply top-3;
     @apply text-xl;
-    @apply right-[-1];
+    @apply right-[-1em];
   }
   
   h3 {

@@ -77,7 +77,7 @@ function App() {
   }
 
   return (
-    <div className={`flex flex-col w-full ${theme ? "bg-slate-800" : "bg-gray-200"}`}>
+    <div className={`flex flex-col w-full min-h-full ${theme ? "bg-slate-800" : "bg-gray-200"}`}>
       <div className="py-0 px-12 md:px-16">
 
         <Nav 
