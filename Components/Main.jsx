@@ -17,6 +17,7 @@ function Main({coordinates}) {
   const [weatherIcon, setweatherIcon] = useState(null)
   const [latitude, setLatitude] = useState(null)
   const [longitude, setLongitude] = useState(null)
+  const [unit, setUnit] = useState(false)
 
   useEffect(()=>{
     if(coordinates){
@@ -70,13 +71,27 @@ function Main({coordinates}) {
         ${theme ? `bg-gradient-to-r from-slate-800 ${weatherIcon.style}` : `bg-gradient-to-r from-gray-200 ${weatherIcon.style}`}`}>
               
               <div className="flex items-center justify-between w-full h-full">
-                <div>
-                  <h1 className={`${theme ? "text-white" : "text-slate-800"}`}>
-                    {currentWeather.main.temp.toFixed(0)} <span>&deg;C</span>
-                  </h1>
-                  <p className={`${theme ? "text-white" : "text-slate-800"}`}>
-                    {currentWeather.name}, {currentWeather.sys.country}
-                  </p>
+                <div className='flex'>
+                  <div className=' min-w-[7.2em]'>
+                    <h1 className={`${theme ? "text-white" : "text-slate-800"} `}>
+                      {
+                        unit &&
+                        currentWeather.main.temp.toFixed(0)
+                      } 
+                      {
+                        !unit &&
+                        (currentWeather.main.temp * 1.8 + 32).toFixed(0)
+                      } 
+                    </h1>
+                    <p className={`${theme ? "text-white" : "text-slate-800"}`}>
+                      {currentWeather.name}, {currentWeather.sys.country}
+                    </p>
+                  </div>
+                  <div className='flex mt-2 gap-1'>
+                    <p onClick={()=>setUnit(true)} className={`${unit && "font-bold text-black"} cursor-pointer`}>&deg;C</p>
+                    <p>|</p>
+                    <p onClick={()=>setUnit(false)} className={`${!unit && "font-bold text-black"} cursor-pointer`}>&deg;F</p>
+                  </div>
                 </div>
     
                 <img className='max-w-[15%]' src={weatherIcon ? weatherIcon.icon : WeatherIconSun} alt="weather" />

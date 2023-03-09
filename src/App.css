@@ -15,14 +15,7 @@
     color: var(--fontColor);
     margin: 0;
     line-height: 100%;
-    width: fit-content;
-  }
-  
-  h1 span {
-    @apply absolute;
-    @apply top-3;
-    @apply text-xl;
-    @apply right-[-1em];
+    /* width: fit-content; */
   }
   
   h3 {
