@@ -18,12 +18,12 @@
     width: fit-content;
   }
   
-  h1 span {
+  /* h1 span {
     @apply absolute;
     @apply top-3;
     @apply text-xl;
-    @apply right-[-1em];
-  }
+    @apply right-[-3em];
+  } */
   
   h3 {
     @apply m-0;
