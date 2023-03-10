@@ -96,9 +96,15 @@ function App() {
       <div className={`flex justify-center items-center gap-15px w-full h-28 ${theme ? "bg-slate-700" : "bg-white"} py-8 my-0 mx-auto`}>
         <div className="flex gap-3 items-center m-auto px-10">
           <div><img className='w-12 cursor-pointer' src={AddButton} alt="add" /></div>
-          <p>Add your preferred cities here. (coming soon)</p>
+          <p>Save your preferred cities here. (coming soon)</p>
         </div>
       </div> 
+
+      {/* <div className='absolute flex items-center h-screen w-full bg-slate-500 overflow-hidden opacity-70'>
+        <div className='absolute h-80 w-60 bg-slate-50 m-auto rounded-2xl z-10'>
+
+        </div>
+      </div> */}
 
       <div className="flex grow gap-10 items-center justify-center py-8">
         <img className='h-auto w-36' src={theme ? Logo_light : Logo} alt="logo" /> <p>Built with React</p>
