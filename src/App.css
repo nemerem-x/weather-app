@@ -6,6 +6,11 @@
   html, body, #root {
     font-family: 'Inter', sans-serif;
     @apply min-h-full;
+    @apply bg-gray-200;
+  }
+
+  .darkOnlyOnBodyTag {
+    @apply bg-slate-800
   }
 
   h1 {

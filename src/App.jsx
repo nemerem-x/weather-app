@@ -13,6 +13,10 @@ function App() {
 
   const theme = useRecoilValue(appTheme)
 
+  useEffect(() => {
+    document.body.classList.toggle('darkOnlyOnBodyTag', theme);
+  },[theme])
+
   // const root = document.querySelector(':root');
   // root.style.setProperty('--backgroundColor',  theme ? '#1E293B' : '#f6f6f6');
 
