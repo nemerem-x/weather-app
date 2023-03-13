@@ -101,7 +101,7 @@ function App() {
       <div className={`flex justify-center items-center gap-15px w-full h-28 ${theme ? "bg-slate-700" : "bg-white"} py-8 my-0 mx-auto`}>
         <div className="flex gap-3 items-center m-auto px-10">
           <div><img onClick={()=>{setModal(true)}} className='w-12 cursor-pointer' src={AddButton} alt="add" /></div>
-          <p>Save your preferred cities here. (coming soon)</p>
+          <p>Save your preferred cities here.</p>
         </div>
       </div> 
 

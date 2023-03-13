@@ -98,7 +98,7 @@ function Main({coordinates}) {
               </div>
     
               <div className="flex items-center gap-1 absolute bottom-4">
-                <div className="h-2 w-2 rounded-full bg-gray-800 cursor-pointer"></div>
+                <div className="h-2 w-2 rounded-full bg-gray-600 cursor-pointer"></div>
                 <div className="h-2 w-2 rounded-full bg-gray-400 cursor-pointer"></div>
                 <div className="h-2 w-2 rounded-full bg-gray-400 cursor-pointer"></div>
               </div>

@@ -3,15 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-  html, body, #root {
+  html, body {
     font-family: 'Inter', sans-serif;
-    @apply min-h-full;
+    @apply min-h-screen;
     @apply bg-gray-200;
   }
 
   .darkOnlyOnBodyTag {
     @apply bg-slate-800;
-    @apply min-h-full;
   }
 
   h1 {
