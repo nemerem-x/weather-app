@@ -88,9 +88,9 @@ function Main({coordinates}) {
                     </p>
                   </div>
                   <div className='flex mt-2 gap-1'>
-                    <p onClick={()=>setUnit(true)} className={`${unit && "font-bold text-black"} cursor-pointer`}>&deg;C</p>
+                    <p onClick={()=>setUnit(true)} className={`${unit && `font-bold ${theme ? "text-white" : "text-black"}`} cursor-pointer`}>&deg;C</p>
                     <p>|</p>
-                    <p onClick={()=>setUnit(false)} className={`${!unit && "font-bold text-black"} cursor-pointer`}>&deg;F</p>
+                    <p onClick={()=>setUnit(false)} className={`${!unit && `font-bold ${theme ? "text-white" : "text-black"}`} cursor-pointer`}>&deg;F</p>
                   </div>
                 </div>
     
