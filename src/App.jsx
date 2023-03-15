@@ -31,7 +31,7 @@ function App() {
       const options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': '84cb2be0d9msh250ec78d40daaf3p148eb0jsn39f8064681a6',
+          'X-RapidAPI-Key': import.meta.env.VITE_APP_RAPID_API_KEY,
           'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
         }
       }
