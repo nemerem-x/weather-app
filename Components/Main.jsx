@@ -37,7 +37,7 @@ function Main({coordinates}) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=37bfb4e0565fd074a0c0346aa9373a99`)
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${import.meta.env.VITE_APP_APP_ID}`)
         const data = await res.json()
         setCurrentWeather(data)
         
