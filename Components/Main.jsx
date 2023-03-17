@@ -145,7 +145,7 @@ function Main({ coordinates }) {
                 <div className="flex items-center justify-between w-full h-full">
                   <div className='flex justify-center w-full'>
                     <div className=' min-w-[7.2em]'>
-                      <h3 className={`${theme ? "text-white" : "text-slate-800"} text-base md:text-2xl `}>
+                      <h3 className={`${theme ? "text-white" : "text-slate-800"} text-center text-lg md:text-2xl `}>
                         Nothing to see here for now.
                       </h3>
                     </div>

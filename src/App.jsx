@@ -112,7 +112,7 @@ function App() {
             <div className=' grow'>
               <img className=' w-80' src='/clouds3D.png' alt='icon'></img>
             </div>
-            <p className=' text-center text-2xl pb-12'> Hey, This Feature is still in development...</p>
+            <p className=' text-center text-lg md:text-2xl pb-12'> Hey, This Feature is still in development...</p>
             <button onClick={()=>{setModal(false)}} className={`text-center w-full py-2 px-4 ${theme ? "bg-slate-50 text-black" : "bg-gray-900 text-white"} rounded-2xl text-lg hover:bg-gray-600`}>
               Great!
             </button>
