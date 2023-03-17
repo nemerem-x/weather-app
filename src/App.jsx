@@ -98,7 +98,7 @@ function App() {
 
       </div> 
 
-      <div className={`flex justify-center items-center gap-15px w-full h-28 ${theme ? "bg-slate-700" : "bg-white"} py-8 my-0 mx-auto`}>
+      <div className={`flex justify-center items-center gap-15px w-full h-28 ${theme ? "bg-slate-700/30" : "bg-white"} py-8 my-0 mx-auto`}>
         <div className="flex gap-3 items-center m-auto px-10">
           <div><img onClick={()=>{setModal(true)}} className='w-12 cursor-pointer' src={AddButton} alt="add" /></div>
           <p>Save your preferred cities here.</p>
@@ -112,7 +112,7 @@ function App() {
             <div className=' grow'>
               <img className=' w-80' src='/clouds3D.png' alt='icon'></img>
             </div>
-            <p className=' text-center text-2xl p-8'> Hey, This Feature is still in development...</p>
+            <p className=' text-center text-2xl pb-12'> Hey, This Feature is still in development...</p>
             <button onClick={()=>{setModal(false)}} className={`text-center w-full py-2 px-4 ${theme ? "bg-slate-50 text-black" : "bg-gray-900 text-white"} rounded-2xl text-lg hover:bg-gray-600`}>
               Great!
             </button>

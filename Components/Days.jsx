@@ -89,7 +89,7 @@ function Days({ coordinates }) {
       {currentWeather
         ?
         <div className={`relative flex items-center justify-between gap-4 max-w-3xl 
-        h-auto my-8 rounded-[40px] m-auto p-12 shadow-lg ${theme ? "bg-slate-800" : 'bg-gray-100'}`}>
+        h-auto my-8 rounded-[40px] m-auto p-12 ${theme ? "bg-slate-700/30" : 'bg-gray-100'}`}>
 
           {fourDaysWeather()}
 
