@@ -43,7 +43,7 @@ function Nav({ handleOnChange, handleOnSubmit, coordinates, searchResult }) {
         <div className="flex items-center justify-center md:justify-between m-auto h-12 ">
           <img className='max-w-[150px] hidden md:block' src={theme ? Logo_light : Logo} alt="logo" />
 
-          <div className='relative flex items-center h-10 w-80'>
+          <div className='relative flex items-center h-10 w-80 md:right-[35px]'>
             <input
               className='absolute w-full rounded-3xl py-3 px-4 text-sm border-white border-2 focus:border-gray-900 focus:outline-none'
               ref={inputField}
