@@ -69,7 +69,6 @@ function Main({ coordinates }) {
     }
   }, [longitude || latitude])
 
-  console.log(currentWeather.wind)
   return (
     <>
       {
