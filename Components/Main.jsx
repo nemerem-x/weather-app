@@ -69,7 +69,7 @@ function Main({ coordinates }) {
     }
   }, [longitude || latitude])
 
-  console.log(currentWeather)
+  console.log(currentWeather.wind)
   return (
     <>
       {
@@ -145,8 +145,10 @@ function Main({ coordinates }) {
                 <div className="flex items-center justify-between w-full h-full">
                   <div className='flex justify-center w-full'>
                     <div className=' min-w-[7.2em]'>
-                      <h3 className={`${theme ? "text-white" : "text-slate-800"} text-center text-lg md:text-2xl `}>
-                        Nothing to see here for now.
+                      <h3 className={`flex flex-wrap justify-center gap-5 md:gap-10 text-sm ${theme ? "text-white" : "text-slate-800"} text-center md:text-lg `}>
+                        <p>Speed - {currentWeather.wind.speed}</p>
+                        <p>Direction - {currentWeather.wind.deg}&deg;</p>
+                        <p>Gust - {currentWeather.wind.gust}</p>
                       </h3>
                     </div>
                   </div>
