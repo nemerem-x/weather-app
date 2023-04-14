@@ -6,25 +6,26 @@ import WeatherIconCloud from '/cloud.png'
 import WeatherIconSnow from '/snow.png'
 import WeatherIconThunderStorm from '/thunderstorm.png'
 import { useState, useEffect } from 'react'
-import Loading from '../Components/Loading'
+import Loading from './Loading'
 import appTheme from '../src/recoil/themeAtom'
 import { useRecoilValue } from 'recoil'
 
-function Main({ coordinates }) {
+interface Prop {
+  coordinates: { lon: number, lat: number } | null;
+}
+
+function Main({ coordinates }: Prop) {
 
   const theme = useRecoilValue(appTheme)
 
-  const [currentWeather, setCurrentWeather] = useState(null)
-  const [weatherIcon, setweatherIcon] = useState(null)
-  const [latitude, setLatitude] = useState(null)
-  const [longitude, setLongitude] = useState(null)
+  const [currentWeather, setCurrentWeather] = useState<any>(null)
+  const [weatherIcon, setweatherIcon] = useState<{icon: string, style: string}>(null)
+  const [latitude, setLatitude] = useState<number | null>(null)
+  const [longitude, setLongitude] = useState<number | null>(null)
   const [unit, setUnit] = useState(false)
 
   const [main1, setMain1] = useState(true)
   const [main2, setMain2] = useState(false)
-  const [main3, setMain3] = useState(false)
-  const [main1Initial, setMain1Initial] = useState(0)
-
 
   useEffect(() => {
     if (coordinates) {
