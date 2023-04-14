@@ -19,7 +19,7 @@ function Main({ coordinates }: Prop) {
   const theme = useRecoilValue(appTheme)
 
   const [currentWeather, setCurrentWeather] = useState<any>(null)
-  const [weatherIcon, setweatherIcon] = useState<{icon: string, style: string}>(null)
+  const [weatherIcon, setweatherIcon] = useState<{icon: string, style: string} | null>(null)
   const [latitude, setLatitude] = useState<number | null>(null)
   const [longitude, setLongitude] = useState<number | null>(null)
   const [unit, setUnit] = useState(false)

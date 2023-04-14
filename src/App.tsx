@@ -46,7 +46,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=37bfb4e0565fd074a0c0346aa9373a99`)
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_APP_APP_ID}`)
         const data = await res.json()
         setCoordinates(data.coord)
       } catch (error) {
