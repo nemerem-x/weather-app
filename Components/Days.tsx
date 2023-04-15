@@ -9,13 +9,17 @@ import { useRecoilValue } from 'recoil'
 import Loading from './Loading'
 import '../src/App.css'
 
-function Days({ coordinates }) {
+interface Prop {
+  coordinates: { lon: number, lat: number } | null;
+}
+
+function Days({ coordinates }: Prop) {
 
   const theme = useRecoilValue(appTheme)
 
-  const [currentWeather, setCurrentWeather] = useState(null)
-  const [latitude, setLatitude] = useState(null)
-  const [longitude, setLongitude] = useState(null)
+  const [currentWeather, setCurrentWeather] = useState<any>(null)
+  const [latitude, setLatitude] = useState<number | null>(null)
+  const [longitude, setLongitude] = useState<number | null>(null)
 
   useEffect(() => {
     if (coordinates) {
@@ -28,7 +32,7 @@ function Days({ coordinates }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=37bfb4e0565fd074a0c0346aa9373a99`)
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${import.meta.env.VITE_APP_APP_ID}`)
         const data = await res.json()
         setCurrentWeather(data)
 
@@ -45,14 +49,14 @@ function Days({ coordinates }) {
   const name = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   const fourDaysWeather = () => {
 
-    const days = currentWeather.list.map((item, index) => {
+    const days = currentWeather.list.map((item: {}[], index: number) => {
       if (index == 22 || index == 7 || index == 15 || index == 29) {
         return item
       }
-    }).filter(ele => ele != undefined).map(item => {
-
+    }).filter((ele:[]) => ele != undefined).map((item: any) => {
+      
       const date = new Date(item.dt * 1000)
-
+      
       const theWeatherIcon = () => {
         if (item.weather[0].main.toLowerCase() == "rain") {
           return WeatherIconRainSmall
@@ -66,7 +70,7 @@ function Days({ coordinates }) {
           return WeatherIconSunSmall
         }
       }
-
+      
       return (
         <div key={item.dt} className="flex flex-col items-center gap-2 justify-center md:flex-row">
           <img className='h-full w-12' src={theWeatherIcon()} alt="weather" />

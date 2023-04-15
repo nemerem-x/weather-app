@@ -6,20 +6,28 @@ import appTheme from '../src/recoil/themeAtom'
 import { useRecoilValue } from 'recoil'
 import { useRecoilState } from 'recoil'
 
-function Nav({ handleOnChange, handleOnSubmit, coordinates, searchResult }) {
+interface Prop {
+  handleOnChange: (selected: React.FormEvent<HTMLInputElement>) => void;
+  handleOnSubmit: (e: React.TouchEvent<HTMLHeadingElement> | React.MouseEvent<HTMLHeadingElement> | React.MouseEvent<HTMLButtonElement>, selected: string | null) => void;
+  coordinates: { lon: number, lat: number } | null;
+  searchResult: any[]
+}
+
+function Nav({ handleOnChange, handleOnSubmit, coordinates, searchResult }: Prop) {
 
   const theme = useRecoilValue(appTheme)
   const [_, setTheme] = useRecoilState(appTheme);
 
-  const onClick = (event) => {
+  const onClick = () => {
     setTheme(oldTheme => !oldTheme);
   };
 
-  const [selected, setselected] = useState("")
-  const inputField = useRef(null)
+  const [selected, setselected] = useState<string | null>("")
+  const inputField = useRef<any>(null)
 
-  const select = (e) => {
-    setselected(e.target.textContent)
+  const select = (e: React.FormEvent<HTMLElement>) => {
+    let target = e.target as HTMLElement
+    setselected(target.textContent)
     inputField.current.value = ""
   }
 
@@ -54,7 +62,7 @@ function Nav({ handleOnChange, handleOnSubmit, coordinates, searchResult }) {
               placeholder='Search city'
             />
             <button className='absolute py-2 px-4 bg-gray-900 text-white rounded-3xl right-2 text-xs hover:bg-gray-600'
-              onClick={handleOnSubmit}
+              onClick={(e) => handleOnSubmit(e, selected)}
               type="submit">
               Search
             </button>

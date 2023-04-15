@@ -15,15 +15,12 @@ function App() {
 
   useEffect(() => {
     document.body.classList.toggle('darkOnlyOnBodyTag', theme);
-  },[theme])
+  }, [theme])
 
-  // const root = document.querySelector(':root');
-  // root.style.setProperty('--backgroundColor',  theme ? '#1E293B' : '#f6f6f6');
-
-  const [coordinates, setCoordinates] = useState(null)
-  const [searchquery, setSearchquery] = useState(undefined)
+  const [coordinates, setCoordinates] = useState<{lon: number, lat: number} | null>(null)
+  const [searchquery, setSearchquery] = useState<string | undefined>(undefined)
   const [searchResult, setSearchResult] = useState([])
-  const [city, setCity] = useState("")
+  const [city, setCity] = useState<string | undefined>("")
   const [modal, setModal] = useState(false)
 
   useEffect(() => {
@@ -39,42 +36,45 @@ function App() {
         const res = await fetch(`https://wft-geo-db.p.rapidapi.com/v1/geo/cities?minPopulation=1000000&namePrefix=${searchquery}`, options)
         const data = await res.json()
         setSearchResult(data.data)
-      } catch(error) {
+      } catch (error) {
         console.log(error)
       }
     }
     city()
-  },[searchquery])
+  }, [searchquery])
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=37bfb4e0565fd074a0c0346aa9373a99`)
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_APP_APP_ID}`)
         const data = await res.json()
         setCoordinates(data.coord)
-      } catch(error){
+      } catch (error) {
         console.log(error)
       }
     }
-    if(searchquery){
+    if (searchquery) {
       fetchData()
     }
-  },[city])
+  }, [city])
 
-  function debounce(func, timeout = 1000){
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => { func(...args) }, timeout);
-    };
+  function debounce (func: (...args: any[]) => any, timeout = 1000) {
+    let timer: number;
+    return (...args: any[]) => {
+      clearTimeout(timer)
+      timer = setTimeout(() => { func(...args) }, timeout)
+    }
   }
-  const input = debounce((e)=> 
-      setSearchquery(e.target.value ? e.target.value : undefined)
+  
+  const input = debounce((e: React.FormEvent<HTMLInputElement>): void => {
+    let target = e.target as HTMLInputElement
+    setSearchquery(target.value ? target.value : undefined)
+  }
   )
 
-  const submit = (e, selected) => {
+  const submit = (e: React.TouchEvent<HTMLHeadingElement> | React.MouseEvent<HTMLHeadingElement> | React.MouseEvent<HTMLButtonElement>, selected: string | null): void => {
     e.preventDefault()
-    if(selected){
+    if (selected) {
       setSearchquery(selected)
     }
     setCity(selected || searchquery)
@@ -85,7 +85,7 @@ function App() {
     <div className={`flex flex-col w-full min-h-full ${theme ? "bg-slate-800" : "bg-gray-200"}`}>
       <div className="py-0 px-12 md:px-16">
 
-        <Nav 
+        <Nav
           searchResult={searchResult ? searchResult : []}
           coordinates={coordinates}
           handleOnChange={input}
@@ -96,14 +96,14 @@ function App() {
 
         <Days coordinates={coordinates} />
 
-      </div> 
+      </div>
 
       <div className={`flex justify-center items-center gap-15px w-full h-28 ${theme ? "bg-slate-700/30" : "bg-white"} py-8 my-0 mx-auto`}>
         <div className="flex gap-3 items-center m-auto px-10">
-          <div><img onClick={()=>{setModal(true)}} className='w-12 cursor-pointer' src={AddButton} alt="add" /></div>
+          <div><img onClick={() => { setModal(true) }} className='w-12 cursor-pointer' src={AddButton} alt="add" /></div>
           <p>Save your preferred cities here.</p>
         </div>
-      </div> 
+      </div>
 
       {
         modal &&
@@ -113,7 +113,7 @@ function App() {
               <img className=' w-80' src='/clouds3D.png' alt='icon'></img>
             </div>
             <p className=' text-center text-lg md:text-2xl pb-12'> Hey, This Feature is still in development...</p>
-            <button onClick={()=>{setModal(false)}} className={`text-center w-full py-2 px-4 ${theme ? "bg-slate-50 text-black" : "bg-gray-900 text-white"} rounded-2xl text-lg hover:bg-gray-600`}>
+            <button onClick={() => { setModal(false) }} className={`text-center w-full py-2 px-4 ${theme ? "bg-slate-50 text-black" : "bg-gray-900 text-white"} rounded-2xl text-lg hover:bg-gray-600`}>
               Great!
             </button>
           </div>
@@ -121,9 +121,9 @@ function App() {
       }
 
       <div className="flex grow gap-10 items-center justify-center py-8">
-        <img className='h-auto w-36' src={theme ? Logo_light : Logo} alt="logo" /> <p>Built with React</p>
+        <img className='h-auto w-36' src={theme ? Logo_light : Logo} alt="logo" /> <p>Built with React + TypeScript</p>
       </div>
-    
+
     </div>
   )
 }
